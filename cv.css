@@ -13,12 +13,12 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Crucial pour le responsive */
+    box-sizing: border-box; 
 }
 
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background-color: #dde9f0; /* Ton bleu clair de base */
+    background-color: #dde9f0; 
     color: #444;
     line-height: 1.6;
 }
@@ -45,7 +45,7 @@ h1 {
 
 nav {
     background: var(--noir-menu);
-    padding: 0; /* On gère le padding via les liens pour la zone de clic */
+    padding: 0; 
 }
 
 nav ul {
@@ -70,7 +70,7 @@ nav li:hover a {
     background-color: rgba(255, 255, 255, 0.1);
     border-top: 5px solid var(--couleur-accent);
     color: var(--couleur-accent);
-    padding-top: 15px; /* Compense la bordure de 5px */
+    padding-top: 15px; 
     letter-spacing: 1px; 
 }
 
@@ -152,11 +152,28 @@ nav li:hover a {
     border-radius: 15px;
 }
 
-.industrie .etiquette { background: #e1f5fe; color: #0288d1; font-size: 2rem; }
-.commerce .etiquette { background: #e8f5e9; color: #2e7d32; font-size: 2rem;}
+.industrie .etiquette {
+    background: #e1f5fe;
+    color: #0288d1;
+    font-size: 2rem;
+}
 
-.periode { font-weight: bold; color: #7f8c8d; }
-.entreprise { font-style: italic; color: #555; margin: 5px 0; }
+.commerce .etiquette {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 2rem;
+}
+
+.periode {
+    font-weight: bold;
+    color: #7f8c8d;
+}
+
+.entreprise {
+    font-style: italic;
+    color: #555;
+    margin: 5px 0;
+}
 
 /* =========================================
    5. HOBBIES (Index)
@@ -185,12 +202,20 @@ nav li:hover a {
     transition: all 0.3s ease;
 }
 
-.bulle-hobby:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+.bulle-hobby:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
 .skate { border-left-color: #3498db; }
 .chant { border-left-color: #e74c3c; }
 .muscu { border-left-color: #2c3e50; }
 .peinture { border-left-color: #f1c40f; }
-.emoji { font-size: 2.5rem; margin-right: 20px; }
+
+.emoji {
+    font-size: 2.5rem;
+    margin-right: 20px;
+}
 
 /* =========================================
    6. PAGES PROJET PRO & ATOUTS
@@ -201,10 +226,11 @@ nav li:hover a {
     margin: 60px auto;
     padding: 0 20px;
     display: flex;
-    flex-wrap: wrap; /* Pour que les cartes s'empilent sur mobile */
+    flex-wrap: wrap; 
     gap: 30px;
     justify-content: center;
 }
+
 /* --- Style des Cartes (Projet & Atouts) --- */
 .carte-projet-unique, .skills-card {
     background: var(--blanc);
@@ -214,9 +240,10 @@ nav li:hover a {
     border-top: 8px solid var(--couleur-accent);
     position: relative;
     flex: 1;
-    min-width: 300px; /* Évite que les cartes soient trop fines */
+    min-width: 300px; 
     text-align: center;
 }
+
 /* --- Badge "Ma Vision" & Titres Atouts --- */
 .badge-projet {
     position: absolute;
@@ -232,17 +259,20 @@ nav li:hover a {
     text-transform: uppercase;
     box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
 }
-.git{
+
+.git {
     text-decoration: none;
     color: black;
     font-size: large;
 }
+
 .skills-card h2, .carte-projet-unique h2 {
     color: var(--couleur-primaire);
     font-size: 1.8rem;
     margin-bottom: 25px;
     margin-top: 10px;
 }
+
 /* --- Section Atouts : Les Badges Techniques --- */
 .badges-group {
     display: flex;
@@ -251,6 +281,7 @@ nav li:hover a {
     justify-content: center;
     margin-bottom: 20px;
 }
+
 .badge.tech {
     background: #f0f7ff;
     color: var(--couleur-accent);
@@ -261,33 +292,39 @@ nav li:hover a {
     font-size: 0.9rem;
     transition: all 0.3s ease;
 }
+
 .badge.tech:hover {
     background: var(--couleur-accent);
     color: white;
 }
+
 /* --- Section Atouts : La Liste des Qualités --- */
 .liste-qualites {
     list-style: none;
-    text-align: left; /* On repasse en alignement gauche pour la lecture des listes */
+    text-align: left;
     margin-top: 20px;
 }
+
 .liste-qualites li {
     margin-bottom: 15px;
     padding-left: 25px;
     position: relative;
     line-height: 1.5;
 }
+
 .liste-qualites li::before {
-    content: "🚀"; /* Un petit emoji pour le dynamisme */
+    content: "🚀"; 
     position: absolute;
     left: 0;
     font-size: 1rem;
 }
+
 .liste-qualites strong {
     color: var(--couleur-primaire);
-    display: block; /* Met le titre de la qualité sur sa propre ligne */
+    display: block; 
     margin-bottom: 3px;
 }
+
 /* --- Paragraphes de texte (Projet Pro & Atouts) --- */
 .description-skills, .texte-projet p {
     font-size: 1.1rem;
@@ -301,56 +338,65 @@ nav li:hover a {
    7. PAGE CONTACT
    ========================================= */
 .page-contact {
-    max-width: 600px; /* On réduit la largeur pour que ce soit bien centré */
+    max-width: 600px; 
     margin: 50px auto;
     text-align: center;
     padding: 0 20px;
 }
+
 .intro-contact {
     margin-bottom: 30px;
     color: #666;
 }
+
 .liste-contact {
     display: flex;
     flex-direction: column;
-     gap: 20px; /* Espace entre les boutons */
+    gap: 20px; 
 }
+
 .carte-contact {
     display: flex;
-     justify-content: center;
+    justify-content: center;
     align-items: center;
     background: white;
     padding: 20px;
     border-radius: 12px;
-    text-decoration: none; /* Enlève le soulignage */
+    text-decoration: none; 
     color: var(--couleur-primaire);
     border: 1px solid #eee;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     transition: all 0.3s ease;
 }
+
 .carte-contact:hover {
-    transform: translateY(-3px); /* Petit saut au survol */
+    transform: translateY(-3px); 
     border-color: var(--couleur-accent);
     box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
+
 .icone {
     font-size: 2rem;
     margin-right: 20px;
 }
+
 .texte {
-    text-align: left; /* Le texte à l'intérieur reste aligné à gauche */
+    text-align: left; 
 }
+
 .texte strong {
     display: block;
     font-size: 1.2rem;
     color: var(--couleur-accent);
     text-align: center;
 }
+
 .texte p {
     margin: 0;
     color: #555;
     text-align: center;
 }
+
 /* =========================================
    8. FOOTER GLOBAL
    ========================================= */
@@ -370,8 +416,15 @@ footer {
     margin: 0 auto;
 }
 
-.footer-section a { color: white; text-decoration: none; font-weight: bold; }
-.footer-section a:hover { color: var(--couleur-accent); }
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-section a:hover {
+    color: var(--couleur-accent);
+}
 
 .badge-w3c {
     display: flex;
@@ -384,17 +437,35 @@ footer {
    9. RESPONSIVE
    ========================================= */
 @media (min-width: 768px) {
-    .contenu-footer { flex-direction: row; justify-content: space-around; }
+    .contenu-footer {
+        flex-direction: row;
+        justify-content: space-around;
+    }
 }
 
 @media (max-width: 850px) {
-    .sec { flex-direction: column; text-align: center; }
-    h1 { font-size: 2rem; }
-    .gauche img { width: 100%; max-width: 300px; }
+    .sec {
+        flex-direction: column;
+        text-align: center;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .gauche img {
+        width: 100%;
+        max-width: 300px;
+    }
 }
 
 @media (max-width: 600px) {
-    nav ul { flex-direction: column; }
-    nav a { padding: 15px; text-align: center; }
-    .ligne-temporelle { margin-left: 20px; }
+    nav ul {
+        flex-direction: column;
+    }
+    nav a {
+        padding: 15px;
+        text-align: center;
+    }
+    .ligne-temporelle {
+        margin-left: 20px;
+    }
 }
