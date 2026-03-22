@@ -358,6 +358,67 @@ nav li:hover a {
     }
 }
 
+/* Experiences autotdidacte*/
+/* Style pour la section Autodidacte */
+.section-auto {
+    padding: 50px 20px;
+    background-color: #f9f9f9; /* Ou la couleur de ton site */
+}
+
+.titre-section {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.container-auto {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card-auto {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.card-auto:hover {
+    transform: translateY(-10px);
+    border-bottom: 4px solid #007bff; /* Couleur accentuée */
+}
+
+.card-auto h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #007bff;
+}
+
+.card-auto p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+.motivation-box {
+    text-align: center;
+    margin-top: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.1rem;
+    color: #444;
+    border-left: 4px solid #007bff;
+    padding-left: 20px;
+}
+
 /* --- Section Atouts : Les Badges Techniques --- */
 .badges-group {
     display: flex;
