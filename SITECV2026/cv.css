@@ -1,0 +1,617 @@
+/* =========================================
+   1. VARIABLES & RESET
+   ========================================= */
+:root {
+    --couleur-primaire: #2c3e50;
+    --couleur-accent: #3498db;
+    --couleur-survol: rgba(69, 95, 180, 0.144);
+    --blanc: #ffffff;
+    --noir-menu: #333;
+    --gris-fond: #f4f4f4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #dde9f0; 
+    color: #444;
+    line-height: 1.6;
+}
+
+/* =========================================
+   2. HEADER & NAVIGATION (Communs)
+   ========================================= */
+header {
+    padding: 80px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    background-color: var(--couleur-primaire);
+    color: white;
+    padding: 15px 40px;
+    border-radius: 0 50px 0 50px; 
+    font-size: 2.8rem;
+    box-shadow: 10px 10px 0px var(--couleur-accent); 
+    text-align: center;
+}
+
+nav {
+    background: var(--noir-menu);
+    padding: 0; 
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav a {
+    display: block;
+    text-decoration: none;
+    padding: 20px 30px;
+    color: var(--blanc);
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+nav li:hover a {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-top: 5px solid var(--couleur-accent);
+    color: var(--couleur-accent);
+    padding-top: 15px; 
+    letter-spacing: 1px; 
+}
+
+/* =========================================
+   3. SECTION PRÉSENTATION (Index)
+   ========================================= */
+.presentation {
+    padding: 60px 20px;
+}
+
+.sec {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    gap: 50px;
+}
+
+.gauche img {
+    width: 320px;
+    height: auto;
+    border-radius: 15px; 
+    border: 2px solid black;
+}
+
+.droite h2 {
+    font-size: 2.2rem;
+    color: var(--couleur-primaire);
+    margin-bottom: 20px;
+}
+
+.droite h2 span {
+    color: var(--couleur-accent);
+    display: block; 
+    font-size: 1.5rem;
+}
+
+/* =========================================
+   4. PARCOURS & TIMELINE (Index)
+   ========================================= */
+.section-parcours {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.ligne-temporelle {
+    position: relative;
+    border-left: 3px solid #08126d; 
+    margin-left: 50px; 
+    padding-bottom: 20px;
+}
+
+.etape-parcours {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 40px;
+}
+
+.carte-experience {
+    background: #fdfdfd;
+    padding: 10px 20px 40px 20px; 
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    transition: all 0.3s ease;
+}
+
+.carte-experience:hover {
+    border-color: var(--couleur-accent);
+    transform: translateX(10px);
+}
+
+.etiquette {
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 4px 12px;
+    border-radius: 15px;
+}
+
+.industrie .etiquette {
+    background: #e1f5fe;
+    color: #0288d1;
+    font-size: 2rem;
+}
+
+.commerce .etiquette {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 2rem;
+}
+
+.periode {
+    font-weight: bold;
+    color: #7f8c8d;
+}
+
+.entreprise {
+    font-style: italic;
+    color: #555;
+    margin: 5px 0;
+}
+
+/* =========================================
+   5. HOBBIES (Index)
+   ========================================= */
+.section-hobbies {
+    padding: 60px 20px;
+    background-color: var(--blanc);
+    max-width: 1000px;
+    margin: 20px auto;
+    border-radius: 15px;
+}
+
+.conteneur-hobbies {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.bulle-hobby {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border-left: 5px solid #ccc;
+    transition: all 0.3s ease;
+}
+
+.bulle-hobby:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.skate { border-left-color: #3498db; }
+.chant { border-left-color: #e74c3c; }
+.muscu { border-left-color: #2c3e50; }
+.peinture { border-left-color: #f1c40f; }
+
+.emoji {
+    font-size: 2.5rem;
+    margin-right: 20px;
+}
+
+/* =========================================
+   6. PAGES PROJET PRO & ATOUTS
+   ========================================= */
+/* --- Conteneur Global --- */
+.container-projet, .competences-container {
+    max-width: 950px;
+    margin: 60px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 30px;
+    justify-content: center;
+}
+
+/* --- Style des Cartes (Projet & Atouts) --- */
+.carte-projet-unique, .skills-card {
+    background: var(--blanc);
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07);
+    border-top: 8px solid var(--couleur-accent);
+    position: relative;
+    flex: 1;
+    min-width: 300px; 
+    text-align: center;
+}
+
+/* --- Badge "Ma Vision" & Titres Atouts --- */
+.badge-projet {
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--couleur-accent);
+    color: white;
+    padding: 8px 25px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+}
+
+.git {
+    text-decoration: none;
+    color: black;
+    font-size: large;
+}
+
+.skills-card h2, .carte-projet-unique h2 {
+    color: var(--couleur-primaire);
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    margin-top: 10px;
+}
+
+/* --- PAGE PROJET PRO SISR --- */
+
+/* Conteneur principal */
+.content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+/* Titres */
+.content-wrapper h2 {
+    color: #2c3e50;
+    border-left: 5px solid #3498db;
+    padding-left: 15px;
+    margin-top: 40px;
+    font-size: 1.6rem;
+}
+
+/* Introduction */
+.intro-sisr p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* Système de cartes pour les objectifs */
+.grid-objectifs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    border-color: #3498db;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #3498db;
+    font-size: 1.2rem;
+}
+
+/* Citation / Vision */
+.vision-metier {
+    margin-top: 50px;
+    background: #2c3e50;
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    
+}
+.vision-metier h2 {
+    color: #0db7e2}
+
+.quote {
+    font-style: italic;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.quote strong {
+    color: #3498db;
+}
+
+/* Responsive portable */
+@media (max-width: 600px) {
+    .grid-objectifs {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Experiences autotdidacte*/
+/* Style pour la section Autodidacte */
+.section-auto {
+    padding: 50px 20px;
+    background-color: #f9f9f9; /* Ou la couleur de ton site */
+}
+
+.titre-section {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.container-auto {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card-auto {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.card-auto:hover {
+    transform: translateY(-10px);
+    border-bottom: 4px solid #007bff; /* Couleur accentuée */
+}
+
+.card-auto h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #007bff;
+}
+
+.card-auto p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+.motivation-box {
+    text-align: center;
+    margin-top: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.1rem;
+    color: #444;
+    border-left: 4px solid #007bff;
+    padding-left: 20px;
+}
+
+/* --- Section Atouts : Les Badges Techniques --- */
+.badges-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.badge.tech {
+    background: #f0f7ff;
+    color: var(--couleur-accent);
+    border: 1px solid #d0e6f8;
+    padding: 6px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.badge.tech:hover {
+    background: var(--couleur-accent);
+    color: white;
+}
+
+/* --- Section Atouts : La Liste des Qualités --- */
+.liste-qualites {
+    list-style: none;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.liste-qualites li {
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.5;
+}
+
+.liste-qualites li::before {
+    content: "🚀"; 
+    position: absolute;
+    left: 0;
+    font-size: 1rem;
+}
+
+.liste-qualites strong {
+    color: var(--couleur-primaire);
+    display: block; 
+    margin-bottom: 3px;
+}
+
+/* --- Paragraphes de texte (Projet Pro & Atouts) --- */
+.description-skills, .texte-projet p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    max-width: 750px;
+    margin: 0 auto 20px auto;
+}
+
+/* =========================================
+   7. PAGE CONTACT
+   ========================================= */
+.page-contact {
+    max-width: 600px; 
+    margin: 50px auto;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.intro-contact {
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.liste-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+}
+
+.carte-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-decoration: none; 
+    color: var(--couleur-primaire);
+    border: 1px solid #eee;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.carte-contact:hover {
+    transform: translateY(-3px); 
+    border-color: var(--couleur-accent);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.icone {
+    font-size: 2rem;
+    margin-right: 20px;
+}
+
+.texte {
+    text-align: left; 
+}
+
+.texte strong {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--couleur-accent);
+    text-align: center;
+}
+
+.texte p {
+    margin: 0;
+    color: #555;
+    text-align: center;
+}
+
+/* =========================================
+   8. FOOTER GLOBAL
+   ========================================= */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 50px;
+}
+
+.contenu-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-section a:hover {
+    color: var(--couleur-accent);
+}
+
+.badge-w3c {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    opacity: 0.7;
+}
+
+/* =========================================
+   9. RESPONSIVE
+   ========================================= */
+@media (min-width: 768px) {
+    .contenu-footer {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 850px) {
+    .sec {
+        flex-direction: column;
+        text-align: center;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .gauche img {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+    }
+    nav a {
+        padding: 15px;
+        text-align: center;
+    }
+    .ligne-temporelle {
+        margin-left: 20px;
+    }
+}
